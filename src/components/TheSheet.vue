@@ -210,8 +210,8 @@ const onWindowResize = () => {
 };
 
 function handleDrag(ctx) {
-  isDragging.value = true
   if (ctx.tap || !allowDrag(ctx)) return;
+  isDragging.value = true
 
   const {
     movement: [, y],
@@ -225,9 +225,8 @@ function handleDrag(ctx) {
 }
 
 function handleDragEnd(ctx) {
-  isDragging.value = false
-
   if (ctx.tap || !allowDrag(ctx)) return;
+  isDragging.value = false
 
   const {
     swipe: [, sy],
