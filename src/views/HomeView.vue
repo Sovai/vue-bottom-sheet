@@ -17,7 +17,7 @@
 
 </template>
 <script setup>
-import { nextTick } from 'vue'
+import { nextTick, ref } from 'vue'
 import TheSheet from "@/components/TheSheet.vue";
 const sheetRef = ref(null);
 async function openSheet() {
