@@ -281,6 +281,7 @@ function allowDrag(ctx) {
 async function setOpen() {
   // show the actual sheet content (it is destroyed when sheet close)
   renderSheet.value = true;
+  isDragging.value = true
 
   // make sure everything's loaded
   await nextTick();
