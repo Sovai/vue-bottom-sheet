@@ -19,7 +19,6 @@ body {
 .app-container {
   padding: 0;
   margin: 0;
-  background: black;
   position: relative;
   height: 120vh;
   width: 100vw;

@@ -14,7 +14,7 @@
 
     <div
       ref="sheetRef"
-      class="relative bg-black-8 backdrop-blur-sheet text-white rounded-t-[35px] z-[1002]"
+      class="relative bg-red backdrop-blur-sheet text-white rounded-t-[35px] z-[1002]"
       id="sheet-card"
     >
       <template v-if="renderSheet">
