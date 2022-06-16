@@ -176,6 +176,8 @@ const getContentOverflow = computed(() =>
 );
 
 function dragHandler(ctx) {
+    isDragging.value = false;
+
   // console.log("ctx: ", ctx);
   const { dragging } = ctx;
   if (dragging) {
