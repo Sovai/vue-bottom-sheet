@@ -171,12 +171,9 @@ const getWrapperClass = computed(() => {
   };
 });
 
-const getContentOverflow = computed(() => {
-  return {
-    "overflow-y-auto": !isDragging.value,
-    "overflow-y-hidden": isDragging.value
-  }
-})
+const getContentOverflow = computed(() =>
+  isDragging.value ? "overflow-y-hidden" : "overflow-y-auto"
+);
 
 function dragHandler(ctx) {
   // console.log("ctx: ", ctx);
