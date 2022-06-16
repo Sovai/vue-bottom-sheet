@@ -50,9 +50,9 @@
         <div
           ref="sheetContentRef"
           id="sheet-content"
-          :class="[contentCls]"
+          :class="[contentCls, getContentOverflow]"
           :style="getContentHeight"
-          class="overflow-y-auto relative w-full"
+          class="relative w-full"
         >
           <slot></slot>
         </div>
@@ -130,6 +130,7 @@ let headerWrapperHeight = ref(0);
 let renderSheet = ref(true);
 let sheetHeight = ref(0);
 let state = ref();
+let isDragging = ref(false)
 let overlayState = ref(0);
 let axisY = ref(0);
 let wrapperIndex = ref("z-[1000]");
@@ -170,6 +171,13 @@ const getWrapperClass = computed(() => {
   };
 });
 
+const getContentOverflow = computed(() => {
+  return {
+    "overflow-y-auto": !isDragging.value,
+    "overflow-y-hidden": isDragging.value
+  }
+})
+
 function dragHandler(ctx) {
   // console.log("ctx: ", ctx);
   const { dragging } = ctx;
@@ -202,6 +210,7 @@ const onWindowResize = () => {
 };
 
 function handleDrag(ctx) {
+  isDragging.value = true
   if (ctx.tap || !allowDrag(ctx)) return;
 
   const {
@@ -216,6 +225,8 @@ function handleDrag(ctx) {
 }
 
 function handleDragEnd(ctx) {
+  isDragging.value = false
+
   if (ctx.tap || !allowDrag(ctx)) return;
 
   const {
