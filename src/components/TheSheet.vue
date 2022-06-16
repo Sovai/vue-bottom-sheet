@@ -348,7 +348,7 @@ useDrag(dragHandler, {
   domTarget: sheetRef,
   filterTaps: true,
   // preventWindowScrollY: true,
-  useTouch: false,
+  useTouch: true,
 });
 
 onBeforeUnmount(async () => {
